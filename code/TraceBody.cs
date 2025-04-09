@@ -12,14 +12,12 @@ public sealed class TraceBody : Component
 		var bbox = Collider.KeyframeBody.GetBounds();
 		var boxCenter = bbox.Center;
 
-		var sphereBbox = new Sphere();
-		sphereBbox.Center = boxCenter;
-		sphereBbox.Radius = 1f;
-		DebugOverlay.Sphere( sphereBbox, Color.Green );
+		DebugOverlay.Sphere( new Sphere( boxCenter, 1f ), Color.Green );
+		DebugOverlay.Sphere( new Sphere( WorldPosition, 2f ), Color.Orange );
 
 		var results = Game.ActiveScene.Trace.Body(
 			Collider.KeyframeBody,
-			boxCenter )
+			WorldPosition )
 			.IgnoreGameObject( Collider.GameObject )
 			.UseHitPosition( true )
 			.RunAll();
