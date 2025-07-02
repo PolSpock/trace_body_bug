@@ -27,8 +27,8 @@ public sealed class TraceBody : Component
 		foreach ( var result in results )
 		{
 			DebugOverlay.Sphere( new Sphere( result.HitPosition, 5f), Color.Red );
-			DebugOverlay.Sphere( new Sphere( result.StartPosition, 5f), Color.Orange );
-			DebugOverlay.Sphere( new Sphere( result.EndPosition, 5f), Color.Green );
+			DebugOverlay.Sphere( new Sphere( result.StartPosition, 6f), Color.Orange );
+			DebugOverlay.Sphere( new Sphere( result.EndPosition, 7f), Color.Green );
 
 			if ( !result.GameObject.Components.TryGet( out ModelRenderer touchedModelRender )) { return; }
 
